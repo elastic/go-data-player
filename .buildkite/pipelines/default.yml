@@ -3,12 +3,3 @@
 steps:
   - label: "Build"
     command: "true"
-
-  - label: "Test"
-    command: "true"
-
-  - label: "Deploy"
-    command: "true"
-
-  - label: "Publish"
-    command: "true"

@@ -22,7 +22,7 @@ spec:
       description: Play back pre-recorded scenarios from multiple viewpoints through the data provider interface
     spec:
       repository: elastic/go-data-player
-      pipeline_file: ".buildkite/pipeline.yml"
+      pipeline_file: ".buildkite/pipelines/main.yml"
       provider_settings:
         build_pull_request_forks: true
       teams:
