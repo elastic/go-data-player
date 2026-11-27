@@ -9,6 +9,7 @@ steps:
     agents:
       image: "docker.elastic.co/ci-agent-images/pipelib:0.36.0@sha256:2e7794253beec90373c69a1ea6018a2f4b6ea3f96af4ff695ed6334d6e627ac4"
     if_changed:
+      - ".buildkite/pipelines/main.yml"
       - "renovate.json"
 
   # if our catalog-info.yaml is changed, make sure it's well-formed according to our internal standards as well as Backstage's validation
@@ -17,10 +18,11 @@ steps:
     agents:
       image: "docker.elastic.co/ci-agent-images/pipelib:0.36.0@sha256:2e7794253beec90373c69a1ea6018a2f4b6ea3f96af4ff695ed6334d6e627ac4"
     if_changed:
+      - ".buildkite/pipelines/main.yml"
       - "catalog-info.yaml"
 
   - label: ":pipeline: Upload default Pipeline"
-    command: "buildkite-agent pipeline upload .buildkite/default-pipeline.yml"
+    command: "buildkite-agent pipeline upload .buildkite/pipelines/default.yml"
     if_changed:
       include:
         - "**/*"
